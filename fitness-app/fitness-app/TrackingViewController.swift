@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class TrackingViewController: UIViewController {
 
@@ -21,6 +22,10 @@ class TrackingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backToChallenge(_ sender: UIBarButtonItem) {
+        
+        dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

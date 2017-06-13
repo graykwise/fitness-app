@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A81F9F08297664DD44657F6C /* Pods_fitness_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9CE605E8910F87DF2FDDF6 /* Pods_fitness_app.framework */; };
 		BC4CC5281EEF270D00F2594D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5271EEF270D00F2594D /* AppDelegate.swift */; };
 		BC4CC52A1EEF270D00F2594D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5291EEF270D00F2594D /* LoginViewController.swift */; };
 		BC4CC52D1EEF270D00F2594D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC52B1EEF270D00F2594D /* Main.storyboard */; };
@@ -14,9 +15,13 @@
 		BC4CC5321EEF270D00F2594D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */; };
 		BC4CC53A1EEF30C400F2594D /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */; };
 		BC4CC5401EEF3F7800F2594D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */; };
+		BC4CC5421EEFE07000F2594D /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */; };
+		BC4CC5441EEFE82800F2594D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35E5EF35CEDEBD2CACFB63C9 /* Pods-fitness-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitness-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app.debug.xcconfig"; sourceTree = "<group>"; };
+		7A9CE605E8910F87DF2FDDF6 /* Pods_fitness_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fitness_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4CC5241EEF270D00F2594D /* fitness-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fitness-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4CC5271EEF270D00F2594D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC4CC5291EEF270D00F2594D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +31,9 @@
 		BC4CC5331EEF270D00F2594D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = ../ProfileTableViewController.swift; sourceTree = "<group>"; };
+		BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitness-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A81F9F08297664DD44657F6C /* Pods_fitness_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BD18A1CB6045B0DB8B4E6C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				35E5EF35CEDEBD2CACFB63C9 /* Pods-fitness-app.debug.xcconfig */,
+				BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		895A27DAE973C1DEDC50F6C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CE605E8910F87DF2FDDF6 /* Pods_fitness_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC4CC51B1EEF270D00F2594D = {
 			isa = PBXGroup;
 			children = (
 				BC4CC5261EEF270D00F2594D /* fitness-app */,
 				BC4CC5251EEF270D00F2594D /* Products */,
+				0BD18A1CB6045B0DB8B4E6C4 /* Pods */,
+				895A27DAE973C1DEDC50F6C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,9 +90,11 @@
 				BC4CC5271EEF270D00F2594D /* AppDelegate.swift */,
 				BC4CC5291EEF270D00F2594D /* LoginViewController.swift */,
 				BC4CC52B1EEF270D00F2594D /* Main.storyboard */,
+				BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */,
 				BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */,
 				BC4CC52E1EEF270D00F2594D /* Assets.xcassets */,
 				BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */,
+				BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */,
 				BC4CC5331EEF270D00F2594D /* Info.plist */,
 			);
 			path = "fitness-app";
@@ -77,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC4CC5361EEF270D00F2594D /* Build configuration list for PBXNativeTarget "fitness-app" */;
 			buildPhases = (
+				056ED9AED1125678F5DD8C93 /* [CP] Check Pods Manifest.lock */,
 				BC4CC5201EEF270D00F2594D /* Sources */,
 				BC4CC5211EEF270D00F2594D /* Frameworks */,
 				BC4CC5221EEF270D00F2594D /* Resources */,
+				253AC0D16EAF0F7F8BFBEB4E /* [CP] Embed Pods Frameworks */,
+				B6FD098D2FA2EB5CD959F7C5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4CC5321EEF270D00F2594D /* LaunchScreen.storyboard in Resources */,
+				BC4CC5441EEFE82800F2594D /* GoogleService-Info.plist in Resources */,
 				BC4CC52F1EEF270D00F2594D /* Assets.xcassets in Resources */,
 				BC4CC52D1EEF270D00F2594D /* Main.storyboard in Resources */,
 			);
@@ -138,11 +172,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		056ED9AED1125678F5DD8C93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		253AC0D16EAF0F7F8BFBEB4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6FD098D2FA2EB5CD959F7C5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC4CC5201EEF270D00F2594D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4CC5421EEFE07000F2594D /* TrackingViewController.swift in Sources */,
 				BC4CC52A1EEF270D00F2594D /* LoginViewController.swift in Sources */,
 				BC4CC53A1EEF30C400F2594D /* ChallengeViewController.swift in Sources */,
 				BC4CC5401EEF3F7800F2594D /* ProfileTableViewController.swift in Sources */,
@@ -269,6 +352,7 @@
 		};
 		BC4CC5371EEF270D00F2594D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35E5EF35CEDEBD2CACFB63C9 /* Pods-fitness-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 74N7J3GY24;
@@ -282,6 +366,7 @@
 		};
 		BC4CC5381EEF270D00F2594D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 74N7J3GY24;
@@ -312,6 +397,7 @@
 				BC4CC5381EEF270D00F2594D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
