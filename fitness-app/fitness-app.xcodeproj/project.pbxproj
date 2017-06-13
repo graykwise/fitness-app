@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BC4CC5281EEF270D00F2594D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5271EEF270D00F2594D /* AppDelegate.swift */; };
-		BC4CC52A1EEF270D00F2594D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5291EEF270D00F2594D /* ViewController.swift */; };
+		BC4CC52A1EEF270D00F2594D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5291EEF270D00F2594D /* LoginViewController.swift */; };
 		BC4CC52D1EEF270D00F2594D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC52B1EEF270D00F2594D /* Main.storyboard */; };
 		BC4CC52F1EEF270D00F2594D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC52E1EEF270D00F2594D /* Assets.xcassets */; };
 		BC4CC5321EEF270D00F2594D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */; };
+		BC4CC53A1EEF30C400F2594D /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */; };
+		BC4CC5401EEF3F7800F2594D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC4CC5241EEF270D00F2594D /* fitness-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fitness-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4CC5271EEF270D00F2594D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC4CC5291EEF270D00F2594D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC4CC5291EEF270D00F2594D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC4CC52C1EEF270D00F2594D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC4CC52E1EEF270D00F2594D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC4CC5311EEF270D00F2594D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC4CC5331EEF270D00F2594D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = ../ProfileTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +58,11 @@
 		BC4CC5261EEF270D00F2594D /* fitness-app */ = {
 			isa = PBXGroup;
 			children = (
+				BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */,
 				BC4CC5271EEF270D00F2594D /* AppDelegate.swift */,
-				BC4CC5291EEF270D00F2594D /* ViewController.swift */,
+				BC4CC5291EEF270D00F2594D /* LoginViewController.swift */,
 				BC4CC52B1EEF270D00F2594D /* Main.storyboard */,
+				BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */,
 				BC4CC52E1EEF270D00F2594D /* Assets.xcassets */,
 				BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */,
 				BC4CC5331EEF270D00F2594D /* Info.plist */,
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC4CC52A1EEF270D00F2594D /* ViewController.swift in Sources */,
+				BC4CC52A1EEF270D00F2594D /* LoginViewController.swift in Sources */,
+				BC4CC53A1EEF30C400F2594D /* ChallengeViewController.swift in Sources */,
+				BC4CC5401EEF3F7800F2594D /* ProfileTableViewController.swift in Sources */,
 				BC4CC5281EEF270D00F2594D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
