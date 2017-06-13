@@ -7,23 +7,38 @@
 //
 
 import UIKit
+import Alamofire
 
 class ChallengeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        //Load this specific League from the database of Leagues
+        Alamofire.request("https://fitness-app-45481.firebaseio.com/Leagues.json").responseJSON { response in
+            if let JSON = response.result.value {
+                
+                let response = JSON as! NSDictionary
+                
+                for (key, value) in response {
+                    
+                    //One dictionary to hold challenge information
+                    if let leagueDictionary = value as? [String : Dictionary<String, AnyObject>] {
+                        
+                        //follow this pattern:
+                        //activity?.name = actDictionary["name"] as! String
+                    }
+                }
+                //Reload data to see League Info
+                self.tableView.reloadData()
+            }
+        }
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -33,16 +48,5 @@ class ChallengeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

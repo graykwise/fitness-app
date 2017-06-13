@@ -17,6 +17,10 @@
 		BC4CC5401EEF3F7800F2594D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */; };
 		BC4CC5421EEFE07000F2594D /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */; };
 		BC4CC5441EEFE82800F2594D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */; };
+		BC4CC5461EEFEB2F00F2594D /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5451EEFEB2F00F2594D /* League.swift */; };
+		BC4CC5481EEFEB6600F2594D /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5471EEFEB6600F2594D /* Challenge.swift */; };
+		BC4CC54A1EEFEB6F00F2594D /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5491EEFEB6F00F2594D /* Bet.swift */; };
+		BC4CC5521EEFECA600F2594D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5511EEFECA500F2594D /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		BC4CC53F1EEF3F7800F2594D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewController.swift; path = ../ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC4CC5451EEFEB2F00F2594D /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		BC4CC5471EEFEB6600F2594D /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		BC4CC5491EEFEB6F00F2594D /* Bet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
+		BC4CC5511EEFECA500F2594D /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitness-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +100,10 @@
 				BC4CC52B1EEF270D00F2594D /* Main.storyboard */,
 				BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */,
 				BC4CC5391EEF30C400F2594D /* ChallengeViewController.swift */,
+				BC4CC5451EEFEB2F00F2594D /* League.swift */,
+				BC4CC5471EEFEB6600F2594D /* Challenge.swift */,
+				BC4CC5491EEFEB6F00F2594D /* Bet.swift */,
+				BC4CC5511EEFECA500F2594D /* Member.swift */,
 				BC4CC52E1EEF270D00F2594D /* Assets.xcassets */,
 				BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */,
 				BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */,
@@ -225,11 +237,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC4CC5481EEFEB6600F2594D /* Challenge.swift in Sources */,
 				BC4CC5421EEFE07000F2594D /* TrackingViewController.swift in Sources */,
 				BC4CC52A1EEF270D00F2594D /* LoginViewController.swift in Sources */,
 				BC4CC53A1EEF30C400F2594D /* ChallengeViewController.swift in Sources */,
+				BC4CC5521EEFECA600F2594D /* Member.swift in Sources */,
 				BC4CC5401EEF3F7800F2594D /* ProfileTableViewController.swift in Sources */,
+				BC4CC5461EEFEB2F00F2594D /* League.swift in Sources */,
 				BC4CC5281EEF270D00F2594D /* AppDelegate.swift in Sources */,
+				BC4CC54A1EEFEB6F00F2594D /* Bet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
