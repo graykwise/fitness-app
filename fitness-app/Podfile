@@ -10,5 +10,8 @@ target 'fitness-app' do
   pod 'Alamofire', '~> 4.4'
   pod 'Gloss', '~> 1.2'
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
 end

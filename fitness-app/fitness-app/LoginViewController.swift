@@ -7,11 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
+    
+    
+    var databaseRef: DatabaseReference!
 
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        databaseRef = Database.database().reference(fromURL: "https://fitness-app-45481.firebaseio.com/")
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -21,5 +31,18 @@ class LoginViewController: UIViewController {
     }
 
 
+    @IBAction func loginPressed(_ sender: UIButton) {
+        print(email.text!)
+        print(password.text!)
+        
+        
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+            if error == nil {
+                self.performSegue(withIdentifier: "pickLeague", sender: nil)
+            }
+            //They are logged in
+            //
+        }
+    }
 }
 

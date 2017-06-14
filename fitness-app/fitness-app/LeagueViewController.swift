@@ -23,7 +23,6 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         memberTable.delegate = self
         memberTable.dataSource = self
         //Load this specific League from the database of Leagues

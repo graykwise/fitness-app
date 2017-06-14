@@ -63,10 +63,10 @@ class TrackingViewController: UIViewController, CLLocationManagerDelegate, MKMap
     }
     
     @IBAction func startRun(_ sender: UIButton) {
-        if(sender.currentTitle == "Start") {
+        if (sender.currentTitle == "Start") {
             //Change to pause button
             sender.setTitle("Pause", for: UIControlState.normal)
-            
+            sender.setImage(UIImage(named: "pause.png"), for: UIControlState.normal)
             //Start timer
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.keepTime), userInfo: nil, repeats: true)
             
@@ -83,6 +83,7 @@ class TrackingViewController: UIViewController, CLLocationManagerDelegate, MKMap
         else if (sender.currentTitle == "Pause") {
             //Stop the run
             sender.setTitle("Start", for: UIControlState.normal)
+            sender.setImage(UIImage(named: "start.png"), for: UIControlState.normal)
             timer.invalidate()
             locationManager.stopUpdatingLocation()
             locationManager.stopUpdatingHeading()

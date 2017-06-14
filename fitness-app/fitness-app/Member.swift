@@ -11,10 +11,12 @@ import Foundation
 class Member {
     var myName: String!
     var myUserID: Int!
+    var myEmail: String!
     
     init() {
         myName = ""
         myUserID = nil
+        myEmail = ""
     }
     
     func setName(name: String) {

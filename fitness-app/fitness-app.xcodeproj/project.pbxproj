@@ -23,6 +23,11 @@
 		BC4CC5761EF02DC000F2594D /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5751EF02DC000F2594D /* ProfileTableViewController.swift */; };
 		BC4CC5781EF136E100F2594D /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5771EF136E100F2594D /* Run.swift */; };
 		BC4CC57A1EF1395800F2594D /* RunInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5791EF1395800F2594D /* RunInfoViewController.swift */; };
+		BC4CC5821EF18AFC00F2594D /* CreateOrJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4CC5811EF18AFC00F2594D /* CreateOrJoinViewController.swift */; };
+		BCB4A2411EF1C74F008E19DD /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A2401EF1C74F008E19DD /* CreateViewController.swift */; };
+		BCB4A2431EF1C763008E19DD /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A2421EF1C763008E19DD /* JoinViewController.swift */; };
+		BCB4A2491EF1D2CC008E19DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A2481EF1D2CC008E19DD /* SignupViewController.swift */; };
+		BCB4A24C1EF1DED0008E19DD /* AddMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A24B1EF1DED0008E19DD /* AddMembersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,12 @@
 		BC4CC5751EF02DC000F2594D /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		BC4CC5771EF136E100F2594D /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		BC4CC5791EF1395800F2594D /* RunInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunInfoViewController.swift; sourceTree = "<group>"; };
+		BC4CC5811EF18AFC00F2594D /* CreateOrJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrJoinViewController.swift; sourceTree = "<group>"; };
+		BCB4A2401EF1C74F008E19DD /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		BCB4A2421EF1C763008E19DD /* JoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		BCB4A2471EF1CCDA008E19DD /* fitness-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fitness-app.entitlements"; sourceTree = "<group>"; };
+		BCB4A2481EF1D2CC008E19DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		BCB4A24B1EF1DED0008E19DD /* AddMembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMembersViewController.swift; sourceTree = "<group>"; };
 		BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitness-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,24 +109,62 @@
 		BC4CC5261EEF270D00F2594D /* fitness-app */ = {
 			isa = PBXGroup;
 			children = (
-				BC4CC5271EEF270D00F2594D /* AppDelegate.swift */,
-				BC4CC5291EEF270D00F2594D /* LoginViewController.swift */,
+				BCB4A2471EF1CCDA008E19DD /* fitness-app.entitlements */,
+				BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */,
 				BC4CC52B1EEF270D00F2594D /* Main.storyboard */,
-				BC4CC5791EF1395800F2594D /* RunInfoViewController.swift */,
-				BC4CC5771EF136E100F2594D /* Run.swift */,
-				BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */,
+				BC4CC5271EEF270D00F2594D /* AppDelegate.swift */,
+				BCB4A24A1EF1DB77008E19DD /* User */,
+				BCB4A2461EF1C7DF008E19DD /* PickLeague */,
+				BC4CC7631EF19C9200F2594D /* Running */,
+				BC4CC7621EF19C7D00F2594D /* League */,
+				BC4CC52E1EEF270D00F2594D /* Assets.xcassets */,
+				BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */,
+				BC4CC5331EEF270D00F2594D /* Info.plist */,
+			);
+			path = "fitness-app";
+			sourceTree = "<group>";
+		};
+		BC4CC7621EF19C7D00F2594D /* League */ = {
+			isa = PBXGroup;
+			children = (
 				BC4CC5391EEF30C400F2594D /* LeagueViewController.swift */,
 				BC4CC5451EEFEB2F00F2594D /* League.swift */,
 				BC4CC5471EEFEB6600F2594D /* Challenge.swift */,
 				BC4CC5491EEFEB6F00F2594D /* Bet.swift */,
-				BC4CC5511EEFECA500F2594D /* Member.swift */,
-				BC4CC52E1EEF270D00F2594D /* Assets.xcassets */,
-				BC4CC5301EEF270D00F2594D /* LaunchScreen.storyboard */,
-				BC4CC5431EEFE82800F2594D /* GoogleService-Info.plist */,
-				BC4CC5331EEF270D00F2594D /* Info.plist */,
-				BC4CC5751EF02DC000F2594D /* ProfileTableViewController.swift */,
 			);
-			path = "fitness-app";
+			name = League;
+			sourceTree = "<group>";
+		};
+		BC4CC7631EF19C9200F2594D /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				BC4CC5791EF1395800F2594D /* RunInfoViewController.swift */,
+				BC4CC5771EF136E100F2594D /* Run.swift */,
+				BC4CC5411EEFE07000F2594D /* TrackingViewController.swift */,
+			);
+			name = Running;
+			sourceTree = "<group>";
+		};
+		BCB4A2461EF1C7DF008E19DD /* PickLeague */ = {
+			isa = PBXGroup;
+			children = (
+				BC4CC5811EF18AFC00F2594D /* CreateOrJoinViewController.swift */,
+				BCB4A2401EF1C74F008E19DD /* CreateViewController.swift */,
+				BCB4A24B1EF1DED0008E19DD /* AddMembersViewController.swift */,
+				BCB4A2421EF1C763008E19DD /* JoinViewController.swift */,
+			);
+			name = PickLeague;
+			sourceTree = "<group>";
+		};
+		BCB4A24A1EF1DB77008E19DD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BC4CC5291EEF270D00F2594D /* LoginViewController.swift */,
+				BCB4A2481EF1D2CC008E19DD /* SignupViewController.swift */,
+				BC4CC5751EF02DC000F2594D /* ProfileTableViewController.swift */,
+				BC4CC5511EEFECA500F2594D /* Member.swift */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +206,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
 								enabled = 1;
 							};
 						};
@@ -250,13 +302,18 @@
 			files = (
 				BC4CC5761EF02DC000F2594D /* ProfileTableViewController.swift in Sources */,
 				BC4CC5481EEFEB6600F2594D /* Challenge.swift in Sources */,
+				BC4CC5821EF18AFC00F2594D /* CreateOrJoinViewController.swift in Sources */,
 				BC4CC5421EEFE07000F2594D /* TrackingViewController.swift in Sources */,
 				BC4CC5781EF136E100F2594D /* Run.swift in Sources */,
 				BC4CC52A1EEF270D00F2594D /* LoginViewController.swift in Sources */,
+				BCB4A2431EF1C763008E19DD /* JoinViewController.swift in Sources */,
 				BC4CC57A1EF1395800F2594D /* RunInfoViewController.swift in Sources */,
 				BC4CC53A1EEF30C400F2594D /* LeagueViewController.swift in Sources */,
 				BC4CC5521EEFECA600F2594D /* Member.swift in Sources */,
+				BCB4A2411EF1C74F008E19DD /* CreateViewController.swift in Sources */,
 				BC4CC5461EEFEB2F00F2594D /* League.swift in Sources */,
+				BCB4A24C1EF1DED0008E19DD /* AddMembersViewController.swift in Sources */,
+				BCB4A2491EF1D2CC008E19DD /* SignupViewController.swift in Sources */,
 				BC4CC5281EEF270D00F2594D /* AppDelegate.swift in Sources */,
 				BC4CC54A1EEFEB6F00F2594D /* Bet.swift in Sources */,
 			);
@@ -384,6 +441,7 @@
 			baseConfigurationReference = 35E5EF35CEDEBD2CACFB63C9 /* Pods-fitness-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "fitness-app/fitness-app.entitlements";
 				DEVELOPMENT_TEAM = 74N7J3GY24;
 				INFOPLIST_FILE = "fitness-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -398,6 +456,7 @@
 			baseConfigurationReference = BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "fitness-app/fitness-app.entitlements";
 				DEVELOPMENT_TEAM = 74N7J3GY24;
 				INFOPLIST_FILE = "fitness-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
