@@ -691,6 +691,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tdn-gy-8pb">
                                 <rect key="frame" x="49" y="238" width="277" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Twz-3v-U21">
                                         <rect key="frame" x="0.0" y="28" width="277" height="44"/>
@@ -713,19 +714,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6NR-5c-q6H" firstAttribute="top" secondItem="gBG-g6-GMJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4Qk-U3-3gh"/>
-                            <constraint firstAttribute="bottom" secondItem="sr4-Ma-4eL" secondAttribute="bottom" constant="20" symbolic="YES" id="6Ih-N2-kbu"/>
-                            <constraint firstItem="sr4-Ma-4eL" firstAttribute="centerX" secondItem="Tdn-gy-8pb" secondAttribute="centerX" id="FUE-Bv-oU8"/>
-                            <constraint firstItem="gBG-g6-GMJ" firstAttribute="centerX" secondItem="6NR-5c-q6H" secondAttribute="centerX" id="G1M-7k-W3t"/>
-                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="leading" secondItem="plU-kd-PFy" secondAttribute="leadingMargin" constant="33" id="MuJ-jK-w5T"/>
-                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="top" secondItem="6NR-5c-q6H" secondAttribute="bottom" constant="10" id="N4d-sN-tur"/>
-                            <constraint firstItem="sr4-Ma-4eL" firstAttribute="centerX" secondItem="plU-kd-PFy" secondAttribute="centerX" id="NGM-NI-dju"/>
-                            <constraint firstItem="sr4-Ma-4eL" firstAttribute="top" secondItem="Tdn-gy-8pb" secondAttribute="bottom" constant="29" id="OSo-g5-dUo"/>
-                            <constraint firstItem="Tdn-gy-8pb" firstAttribute="top" secondItem="WUU-qQ-pPm" secondAttribute="bottom" id="YBY-hu-FsI"/>
-                            <constraint firstItem="6NR-5c-q6H" firstAttribute="centerX" secondItem="WUU-qQ-pPm" secondAttribute="centerX" id="cpG-7p-l2r"/>
-                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="leading" secondItem="Tdn-gy-8pb" secondAttribute="leading" id="iTg-02-vrk"/>
-                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="trailing" secondItem="Tdn-gy-8pb" secondAttribute="trailing" id="ijk-8W-MXk"/>
-                            <constraint firstItem="gBG-g6-GMJ" firstAttribute="top" secondItem="pIc-N6-QGW" secondAttribute="bottom" constant="55" id="qv8-dz-RMb"/>
+                            <constraint firstItem="Tdn-gy-8pb" firstAttribute="centerX" secondItem="sr4-Ma-4eL" secondAttribute="centerX" id="0ch-PW-ggq"/>
+                            <constraint firstItem="sr4-Ma-4eL" firstAttribute="top" secondItem="Tdn-gy-8pb" secondAttribute="bottom" constant="29" id="3ZX-4L-wZr"/>
+                            <constraint firstItem="6NR-5c-q6H" firstAttribute="top" secondItem="gBG-g6-GMJ" secondAttribute="bottom" constant="8" symbolic="YES" id="GV5-Dz-1Kj"/>
+                            <constraint firstItem="6NR-5c-q6H" firstAttribute="centerX" secondItem="WUU-qQ-pPm" secondAttribute="centerX" id="MaY-I7-r8T"/>
+                            <constraint firstItem="gBG-g6-GMJ" firstAttribute="centerX" secondItem="6NR-5c-q6H" secondAttribute="centerX" id="Pm4-ML-RyT"/>
+                            <constraint firstItem="sr4-Ma-4eL" firstAttribute="centerX" secondItem="plU-kd-PFy" secondAttribute="centerX" id="Vhx-6c-V80"/>
+                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="leading" secondItem="plU-kd-PFy" secondAttribute="leadingMargin" constant="33" id="e9a-p8-mkP"/>
+                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="top" secondItem="6NR-5c-q6H" secondAttribute="bottom" constant="10" id="hrz-ug-ADJ"/>
+                            <constraint firstItem="Tdn-gy-8pb" firstAttribute="top" secondItem="WUU-qQ-pPm" secondAttribute="bottom" id="pPd-7a-ypf"/>
+                            <constraint firstItem="gBG-g6-GMJ" firstAttribute="top" secondItem="pIc-N6-QGW" secondAttribute="bottom" constant="55" id="qMQ-eP-dhf"/>
+                            <constraint firstAttribute="bottom" secondItem="sr4-Ma-4eL" secondAttribute="bottom" constant="20" symbolic="YES" id="siT-2U-D5c"/>
+                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="trailing" secondItem="Tdn-gy-8pb" secondAttribute="trailing" id="st9-n0-0ZK"/>
+                            <constraint firstItem="WUU-qQ-pPm" firstAttribute="leading" secondItem="Tdn-gy-8pb" secondAttribute="leading" id="t4T-f5-lA3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Members" id="aFO-TD-mEC"/>
@@ -837,10 +838,10 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDN-fQ-A46">
-                                <rect key="frame" x="121" y="584" width="136" height="75"/>
+                                <rect key="frame" x="133" y="587" width="109" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Drl-XK-Ave"/>
-                                    <constraint firstAttribute="width" constant="136" id="kaz-Cy-rah"/>
+                                    <constraint firstAttribute="height" constant="60" id="8aM-l1-Hj6"/>
+                                    <constraint firstAttribute="width" constant="109" id="9Nx-Ij-I8g"/>
                                 </constraints>
                                 <state key="normal" title="Track" image="run"/>
                                 <connections>
@@ -854,17 +855,22 @@
                             <constraint firstItem="4nv-Tw-Sge" firstAttribute="leading" secondItem="kB9-Hd-c4M" secondAttribute="leadingMargin" constant="57" id="Iqc-Fy-Afw"/>
                             <constraint firstItem="yf6-X9-8kG" firstAttribute="top" secondItem="Vyp-KL-xdS" secondAttribute="bottom" constant="16" id="SWP-NM-mMO"/>
                             <constraint firstItem="Vyp-KL-xdS" firstAttribute="centerX" secondItem="yf6-X9-8kG" secondAttribute="centerX" id="Tep-i4-UQ8"/>
-                            <constraint firstItem="LDN-fQ-A46" firstAttribute="leading" secondItem="kB9-Hd-c4M" secondAttribute="leading" constant="121" id="ebM-cA-JvG"/>
-                            <constraint firstItem="LDN-fQ-A46" firstAttribute="top" secondItem="4nv-Tw-Sge" secondAttribute="bottom" constant="19" id="jNR-P6-IIj"/>
-                            <constraint firstItem="F8y-kZ-RmZ" firstAttribute="top" secondItem="LDN-fQ-A46" secondAttribute="bottom" constant="8" symbolic="YES" id="lLc-tY-XXX"/>
+                            <constraint firstItem="LDN-fQ-A46" firstAttribute="top" secondItem="4nv-Tw-Sge" secondAttribute="bottom" constant="22" id="WhS-Tr-O94"/>
                             <constraint firstItem="4nv-Tw-Sge" firstAttribute="top" secondItem="yf6-X9-8kG" secondAttribute="bottom" constant="8" symbolic="YES" id="sY7-3e-khv"/>
+                            <constraint firstAttribute="bottom" secondItem="LDN-fQ-A46" secondAttribute="bottom" constant="20" symbolic="YES" id="skx-G0-iJe"/>
                             <constraint firstItem="127-Yc-v4D" firstAttribute="centerX" secondItem="Vyp-KL-xdS" secondAttribute="centerX" id="ugC-uf-Zxq"/>
+                            <constraint firstItem="LDN-fQ-A46" firstAttribute="centerX" secondItem="4nv-Tw-Sge" secondAttribute="centerX" id="y0x-nW-VIu"/>
                             <constraint firstItem="yf6-X9-8kG" firstAttribute="centerX" secondItem="4nv-Tw-Sge" secondAttribute="centerX" id="yi8-I8-YQQ"/>
                             <constraint firstItem="Vyp-KL-xdS" firstAttribute="top" secondItem="127-Yc-v4D" secondAttribute="bottom" constant="19" id="zAb-Kp-fy3"/>
                             <constraint firstItem="127-Yc-v4D" firstAttribute="top" secondItem="M6D-oJ-mkz" secondAttribute="bottom" constant="32" id="zuP-SN-LMu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="League" id="7O7-8n-paE" userLabel="Navigation Item">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="6H8-lz-Iyq">
+                            <connections>
+                                <action selector="logout:" destination="KkT-A1-WeY" id="fTj-YO-Qgu"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="Pbs-zj-yXl">
                             <connections>
                                 <segue destination="8Pd-wt-rLH" kind="presentation" id="CwF-cH-IjZ"/>
@@ -1032,8 +1038,8 @@
         <image name="create" width="405" height="191"/>
         <image name="join" width="405" height="191"/>
         <image name="logo" width="128" height="128"/>
-        <image name="run" width="405" height="304"/>
-        <image name="start" width="393" height="393"/>
+        <image name="run" width="405" height="191"/>
+        <image name="start" width="403" height="403"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HLG-xq-bqb"/>

@@ -18,6 +18,16 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+                // User is signed in.
+            performSegue(withIdentifier: "showLeague", sender: nil)
+        } else {
+                // No user is signed in.
+        }
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

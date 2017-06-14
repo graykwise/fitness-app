@@ -13,6 +13,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     
     @IBOutlet weak var leagueName: UINavigationItem!
     
+   
     let myLeague = League()
 
     @IBOutlet weak var challenge: UILabel!
@@ -116,6 +117,9 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
             return cell
         }
     
+    @IBAction func logout(_ sender: Any) {
+        
+    }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
     }
