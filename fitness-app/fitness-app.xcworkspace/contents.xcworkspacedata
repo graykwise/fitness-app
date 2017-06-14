@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Workshop17 copy.gpx">
+   </FileRef>
+   <FileRef
       location = "group:fitness-app.xcodeproj">
    </FileRef>
    <FileRef
