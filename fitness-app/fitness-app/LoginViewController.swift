@@ -81,6 +81,7 @@ class LoginViewController: UIViewController {
             if error == nil {
                 self.errorPopup.isHidden = true
                 self.performSegue(withIdentifier: "showLeague", sender: nil)
+                
             }
             else{
                 self.errorPopup.isHidden = false

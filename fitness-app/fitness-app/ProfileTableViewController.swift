@@ -7,11 +7,48 @@
 //
 
 import UIKit
+import Firebase
+import Alamofire
+
 
 class ProfileTableViewController: UITableViewController {
     
+    @IBOutlet weak var milesLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var leagueLabel: UILabel!
+    
+    var databaseRef: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        milesLabel.text = "\(0) miles"
+
+        databaseRef = Database.database().reference(fromURL: "https://fitness-app-45481.firebaseio.com/")
+
+        let myID = Auth.auth().currentUser?.uid
+        
+        Alamofire.request("https://fitness-app-45481.firebaseio.com/Users.json").responseJSON {
+            response in
+            
+            if let JSON = response.result.value {
+                
+                let response = JSON as! NSDictionary
+            
+                for (key, value) in response {
+                    if let membersDict = value as? [String: AnyObject] {
+                    
+                        if myID == membersDict["userID"] as? String {
+                            self.emailLabel.text = membersDict["email"] as? String
+                            self.nameLabel.text = membersDict["name"] as? String
+                            self.leagueLabel.text = membersDict["myLeague"] as? String
+
+                        }
+                    }
+                }
+            }
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,11 +81,12 @@ class ProfileTableViewController: UITableViewController {
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
      
+    
      // Configure the cell...
      
      return cell
      }
-     */
+    */
     
     /*
      // Override to support conditional editing of the table view.

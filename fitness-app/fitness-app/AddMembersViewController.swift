@@ -17,6 +17,8 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
     
     
     var leagueName: String!
+    var leagueChallenge: String!
+    var leagueBet: String!
     var members = Array<Member>()
     var databaseRef: DatabaseReference!
     let league = League()
@@ -50,13 +52,14 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
                     }
                 }
                 self.addMemberTable.reloadData()
-  
             }
             
         }
         
         leagueLabel.text = leagueName
         league.myName = leagueName
+        league.myChallenge.challengeString = leagueChallenge
+        league.myBet.betString = leagueBet
         // Do any additional setup after loading the view.
     }
 
@@ -97,10 +100,10 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
         myself.myUserID = Auth.auth().currentUser?.uid
         myself.myName = UserDefaults.standard.string(forKey: "name")
         myself.myEmail = UserDefaults.standard.string(forKey: "email")
+        members.append(myself)
 
         
         league.myMembers.append(myself.myUserID)
-        members.append(myself)
         
         let leagueUrl = URL(string: "https://fitness-app-45481.firebaseio.com/Leagues.json")
 
@@ -112,10 +115,11 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
             case .success:
                 
                 for userID in self.league.myMembers {
-                    print(self.members.count)
                     for member in self.members {
                         if member.myUserID == userID {
                             member.myLeague = self.league.myName
+                            UserDefaults.standard.set(self.league.myName, forKey: "leagueNameDefault")
+
                         }
                         
                         var userUrl = URL(string: "https://fitness-app-45481.firebaseio.com/Users")
@@ -139,7 +143,9 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
                     
                 }
                 
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
+                let leagueView = LeagueViewController()
+                self.present(leagueView, animated: true, completion: nil)
                 
             case .failure: break
                 // Failure... handle error

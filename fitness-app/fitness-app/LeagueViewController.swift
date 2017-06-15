@@ -15,6 +15,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     @IBOutlet weak var leagueName: UINavigationItem!
     
     var databaseRef: DatabaseReference!
+    var cellStyle = "member"
     var myLeague = League()
 
     @IBOutlet weak var challenge: UILabel!
@@ -59,19 +60,14 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                         self.challenge.isHidden = false
                         self.wager.isHidden = false
                             
-                        print("here we are")
                         //member dictionary
-                        if let memberDictionary = leagueDictionary["members"] as? [String : AnyObject] {
-                            print("aaaand here")
-                            for (key, value) in memberDictionary {
-                                let member = Member()
-                                member.myUserID = value as? String
-                                print(value)
-                                print(member.myUserID)
-                                self.myLeague.myMembers.append(member.myUserID)
-                                }
-                            
+                         if let membersArray = leagueDictionary["members"] as? [String] {
+                            for oneMember in membersArray {
+                                self.myLeague.myMembers.append(oneMember)
                             }
+                        }
+                        
+                            
                         }
                     }
                 }
@@ -101,8 +97,11 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                             
                             if member.myUserID == oneUser {
                                 self.memberNames.append(member.myName)
+                                if Auth.auth().currentUser?.uid == member.myUserID {
+                                    self.cellStyle = "currentUser"
+                                }
                                 self.memberTable.reloadData()
-
+                                self.cellStyle = "member"
                             }
                         }
                     }
@@ -124,9 +123,9 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->   UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .default, reuseIdentifier: cellStyle)
         cell.textLabel?.text = memberNames[indexPath.item]
-            return cell
+        return cell
         }
     
     @IBAction func logout(_ sender: Any) {

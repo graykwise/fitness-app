@@ -13,8 +13,10 @@ class CreateViewController: UIViewController {
     
     @IBOutlet weak var leagueName: UITextField!
     
+    @IBOutlet weak var wagerLabel: UITextField!
+    @IBOutlet weak var challengeLabel: UITextField!
     @IBAction func addMembers(_ sender: UIButton) {
-        if leagueName.text == "" {
+        if leagueName.text == "" || challengeLabel.text == "" || wagerLabel.text == "" {
             
         }
         else
@@ -43,6 +45,8 @@ class CreateViewController: UIViewController {
             let newCont = navCont.topViewController as! AddMembersViewController
             
             newCont.leagueName = leagueName.text
+            newCont.leagueChallenge = challengeLabel.text
+            newCont.leagueBet = wagerLabel.text
             
         }
     }
