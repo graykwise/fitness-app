@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import Gloss
+import Alamofire
 
-class Bet{
+class Bet: Glossy, Decodable, Encodable {
     var betString: String!
     
     init() {
@@ -17,5 +19,15 @@ class Bet{
     
     func setBet(bet: String) {
         betString = bet
+    }
+    
+    required init?(json: JSON) {
+        self.betString = "betString" <~~ json
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "betString" ~~> self.betString,
+            ])
     }
 }

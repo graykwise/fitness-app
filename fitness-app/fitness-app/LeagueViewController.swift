@@ -50,7 +50,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                         self.leagueName.title = self.myLeague.myName
                         self.myLeague.myChallenge.challengeString = leagueDictionary["Challenge"] as! String
                         
-                        if let memberDictionary = leagueDictionary["Members"] as? [String : Int] {
+                        if let memberDictionary = leagueDictionary["Members"] as? [String : String] {
                             
                             for (key, value) in memberDictionary {
                                 let member = Member()
@@ -83,7 +83,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                     if let userDictionary = value as? [String : AnyObject] {
                         let member = Member()
                         member.myName = userDictionary["name"] as! String
-                        member.myUserID = userDictionary["ID"] as! Int
+                        member.myUserID = userDictionary["userID"] as! String
                         
                         for oneUser in self.myLeague.myMembers {
                             

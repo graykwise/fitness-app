@@ -66,6 +66,13 @@
                                     <segue destination="Yiq-Nh-qMn" kind="presentation" id="uit-HH-QjF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login Error, Try Again" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCL-IM-CUq">
+                                <rect key="frame" x="84" y="313" width="206" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="0.93308775906735753" green="0.0092812598906275648" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -90,6 +97,7 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="q0T-RN-a6e" id="jK9-32-DfL"/>
+                        <outlet property="errorPopup" destination="lCL-IM-CUq" id="MsO-Da-9v3"/>
                         <outlet property="password" destination="E3x-B6-wzm" id="TMN-vj-IkM"/>
                         <segue destination="nN0-2i-NiB" kind="presentation" identifier="pickLeague" id="HLG-xq-bqb"/>
                         <segue destination="xlf-tu-qcT" kind="presentation" identifier="showLeague" id="MGi-lm-MlA"/>
@@ -607,7 +615,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Join League" id="CfD-hh-xnr">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="saN-ST-c3W"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="saN-ST-c3W">
+                            <connections>
+                                <action selector="backToChoose:" destination="BBC-oD-yKP" id="Qfv-a9-AXd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leaguesTable" destination="bUI-gE-Z9D" id="AKe-l2-R0n"/>
@@ -661,7 +673,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create League" id="pYZ-wp-rsJ">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="aRV-9x-W3A"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="aRV-9x-W3A">
+                            <connections>
+                                <action selector="backToChoose:" destination="2Uv-o5-8ZJ" id="3qY-JP-YXT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="leagueName" destination="TJT-rs-VN6" id="tfb-da-vtN"/>

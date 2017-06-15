@@ -12,6 +12,8 @@ import Firebase
 class LoginViewController: UIViewController {
     
     
+    @IBOutlet weak var errorPopup: UILabel!
+    
     var databaseRef: DatabaseReference!
 
     @IBOutlet weak var email: UITextField!
@@ -19,6 +21,8 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        errorPopup.isHidden = true
 //        if Auth.auth().currentUser != nil {
 //                // User is signed in.
 //            performSegue(withIdentifier: "pickLeague", sender: nil)
@@ -42,14 +46,17 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginPressed(_ sender: UIButton) {
-        print(email.text!)
-        print(password.text!)
-        
-        
+
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil {
+                self.errorPopup.isHidden = true
                 self.performSegue(withIdentifier: "pickLeague", sender: nil)
             }
+            else{
+                self.errorPopup.isHidden = false
+
+            }
+            
             //They are logged in
             //
         }

@@ -71,6 +71,11 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    
+    @IBAction func backToChoose(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation
