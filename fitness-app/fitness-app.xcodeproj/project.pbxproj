@@ -28,6 +28,7 @@
 		BCB4A2431EF1C763008E19DD /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A2421EF1C763008E19DD /* JoinViewController.swift */; };
 		BCB4A2491EF1D2CC008E19DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A2481EF1D2CC008E19DD /* SignupViewController.swift */; };
 		BCB4A24C1EF1DED0008E19DD /* AddMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A24B1EF1DED0008E19DD /* AddMembersViewController.swift */; };
+		BCB4A24E1EF2CDDE008E19DD /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4A24D1EF2CDDE008E19DD /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		BCB4A2471EF1CCDA008E19DD /* fitness-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "fitness-app.entitlements"; sourceTree = "<group>"; };
 		BCB4A2481EF1D2CC008E19DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		BCB4A24B1EF1DED0008E19DD /* AddMembersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMembersViewController.swift; sourceTree = "<group>"; };
+		BCB4A24D1EF2CDDE008E19DD /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		BD65924C5B22BB751B29E9DD /* Pods-fitness-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fitness-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-fitness-app/Pods-fitness-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				BCB4A2481EF1D2CC008E19DD /* SignupViewController.swift */,
 				BC4CC5751EF02DC000F2594D /* ProfileTableViewController.swift */,
 				BC4CC5511EEFECA500F2594D /* Member.swift */,
+				BCB4A24D1EF2CDDE008E19DD /* UserProfile.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				BCB4A2491EF1D2CC008E19DD /* SignupViewController.swift in Sources */,
 				BC4CC5281EEF270D00F2594D /* AppDelegate.swift in Sources */,
 				BC4CC54A1EEFEB6F00F2594D /* Bet.swift in Sources */,
+				BCB4A24E1EF2CDDE008E19DD /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

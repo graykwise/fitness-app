@@ -35,7 +35,7 @@ class Member: Decodable, Glossy, Encodable {
         self.myName = "name" <~~ json
         self.myEmail = "email" <~~ json
         self.myUserID = "userID" <~~ json
-        self.myLeague = "league" <~~ json
+        self.myLeague = "myLeague" <~~ json
     }
     
     func toJSON() -> JSON? {

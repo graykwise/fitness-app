@@ -8,21 +8,26 @@
 
 import UIKit
 import Alamofire
+import Firebase
 
 class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewDataSource {
     
     @IBOutlet weak var leagueName: UINavigationItem!
     
-   
-    let myLeague = League()
+    var databaseRef: DatabaseReference!
+    var myLeague = League()
 
     @IBOutlet weak var challenge: UILabel!
     @IBOutlet weak var memberTable: UITableView!
     @IBOutlet weak var wager: UILabel!
 
+    var memberNames = Array<String>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        challenge.isHidden = true
+        wager.isHidden = true
+        databaseRef = Database.database().reference(fromURL: "https://fitness-app-45481.firebaseio.com/")
 
         memberTable.delegate = self
         memberTable.dataSource = self
@@ -31,36 +36,43 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
             if let JSON = response.result.value {
                 
                 let response = JSON as! NSDictionary
-                
-                
-                //key is Leagues
-                //value is one league
-                //the one league needs to point to
+
                 for (key, value) in response {
                     
                     if let leagueDictionary = value as? [String : AnyObject] {
                         
-                        self.myLeague.myName = leagueDictionary["Name"] as! String
-                        self.myLeague.myBet.betString = leagueDictionary["Bet"] as! String
-                        self.myLeague.myChallenge.challengeString = leagueDictionary["Challenge"] as! String
+                        if leagueDictionary["name"] as? String == UserDefaults.standard.string(forKey: "leagueNameDefault") {
+                        self.myLeague.myName = leagueDictionary["name"] as! String
+                            
+                        //make bet dictionary
+                            if let betDictionary = leagueDictionary["bet"] as? [String : AnyObject] {
+                        self.myLeague.myBet.betString = betDictionary["betString"] as! String
+                            }
+                        //make challenge dictionary
+                            if let challengeDictionary = leagueDictionary["challenge"] as? [String : AnyObject] {
+                                self.myLeague.myChallenge.challengeString = challengeDictionary["challengeString"] as! String
+                            }
                         
                         self.challenge.text = self.myLeague.myChallenge.challengeString
                         self.wager.text = self.myLeague.myBet.betString
-                        
                         self.leagueName.title = self.myLeague.myName
-                        self.myLeague.myChallenge.challengeString = leagueDictionary["Challenge"] as! String
-                        
-                        if let memberDictionary = leagueDictionary["Members"] as? [String : String] {
+                        self.challenge.isHidden = false
+                        self.wager.isHidden = false
                             
+                        print("here we are")
+                        //member dictionary
+                        if let memberDictionary = leagueDictionary["members"] as? [String : AnyObject] {
+                            print("aaaand here")
                             for (key, value) in memberDictionary {
                                 let member = Member()
-                                member.myName = ""
-                                member.myUserID = value
-                                self.myLeague.myMembers.append(member)
-                            }
+                                member.myUserID = value as? String
+                                print(value)
+                                print(member.myUserID)
+                                self.myLeague.myMembers.append(member.myUserID)
+                                }
                             
+                            }
                         }
-                        
                     }
                 }
                 self.matchUsers(league: self.myLeague)
@@ -87,8 +99,8 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                         
                         for oneUser in self.myLeague.myMembers {
                             
-                            if member.myUserID == oneUser.myUserID {
-                                oneUser.myName = member.myName
+                            if member.myUserID == oneUser {
+                                self.memberNames.append(member.myName)
                                 self.memberTable.reloadData()
 
                             }
@@ -100,7 +112,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myLeague.myMembers.count
+        return memberNames.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -113,12 +125,18 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = myLeague.myMembers[indexPath.item].myName
+        cell.textLabel?.text = memberNames[indexPath.item]
             return cell
         }
     
     @IBAction func logout(_ sender: Any) {
-        
+        do{
+            try Auth.auth().signOut()
+            dismiss(animated: true, completion: nil)
+        }
+        catch {
+            
+        }
     }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {

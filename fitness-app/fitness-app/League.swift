@@ -14,13 +14,13 @@ class League: Glossy, Decodable, Encodable {
     var myName: String!
     var myChallenge = Challenge()
     var myBet = Bet()
-    var myMembers = Array<Member>()
+    var myMembers = Array<String>()
     
     init() {
         myName = ""
     }
     
-    init(name: String, challenge: Challenge, bet: Bet, members: Array<Member>) {
+    init(name: String, challenge: Challenge, bet: Bet, members: Array<String>) {
         myName = name
         myChallenge = challenge
         myBet = bet

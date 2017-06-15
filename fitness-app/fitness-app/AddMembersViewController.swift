@@ -81,13 +81,14 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        league.myMembers.append(members[indexPath.item])
+        league.myMembers.append(members[indexPath.item].myUserID)
         
         
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
             //how to handle a deselect
+        league.myMembers.remove(at: league.myMembers.index(of: members[indexPath.item].myUserID)!)
     }
     
     @IBAction func createLeague(_ sender: Any) {
@@ -98,10 +99,10 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
         myself.myEmail = UserDefaults.standard.string(forKey: "email")
 
         
-        league.myMembers.append(myself)
+        league.myMembers.append(myself.myUserID)
+        members.append(myself)
         
         let leagueUrl = URL(string: "https://fitness-app-45481.firebaseio.com/Leagues.json")
-        let userUrl = URL(string: "https://fitness-app-45481.firebaseio.com/Users.json")
 
         
         Alamofire.request(leagueUrl!, method: .post, parameters: league.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
@@ -109,15 +110,32 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
             switch response.result {
                 
             case .success:
-                print("Created League")
                 
-                for user in self.league.myMembers {
-                    var member: Member!
-                    member = user
-                    
-                    Alamofire.request(userUrl!, method: .put, parameters: member.toJSON(), encoding: JSONEncoding.default) {
+                for userID in self.league.myMembers {
+                    print(self.members.count)
+                    for member in self.members {
+                        if member.myUserID == userID {
+                            member.myLeague = self.league.myName
+                        }
                         
+                        var userUrl = URL(string: "https://fitness-app-45481.firebaseio.com/Users")
+                        if let useThisID = member.myUserID {
+                            userUrl?.appendPathComponent("\(useThisID).json")
+                        }
+
+                        Alamofire.request(userUrl!, method: .put, parameters: member.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+                            
+                            
+                            switch response.result {
+                                
+                            case .success: break
+                            case .failure: break
+                                // Failure... handle error
+                            }
+                        }
+
                     }
+                    
                     
                 }
                 
