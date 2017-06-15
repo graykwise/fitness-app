@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import Gloss
+import Alamofire
 
-class Challenge {
+class Challenge: Glossy, Decodable, Encodable{
     var challengeString: String!
     
     init() {
@@ -17,5 +19,15 @@ class Challenge {
     
     func setChallenge(challenge: String) {
         challengeString = challenge
+    }
+    
+    required init?(json: JSON) {
+        self.challengeString = "challengeString" <~~ json
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "challengeString" ~~> self.challengeString,
+            ])
     }
 }

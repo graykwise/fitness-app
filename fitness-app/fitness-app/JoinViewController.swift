@@ -14,6 +14,7 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var leaguesTable: UITableView!
     
     var leagues = Array<League>()
+    var selectedLeague = League()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let league = League()
                     
                     if let leagueDictionary = value as? [String: AnyObject] {
-                        league.myName = leagueDictionary["Name"] as! String
+                        league.myName = leagueDictionary["name"] as! String
                         self.leagues.append(league)
                     }
                 }
@@ -47,6 +48,7 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Do any additional setup after loading the view.
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,7 +60,8 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedLeague = leagues[indexPath.item]
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,6 +72,15 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = UITableViewCell()
         cell.textLabel?.text = leagues[indexPath.item].myName
         return cell
+    }
+    
+    
+    @IBAction func backToChoose(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func joinLeague(_ sender: UIButton) {
+        
     }
     
 

@@ -34,13 +34,15 @@ class SignupViewController: UIViewController {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil {
                 self.databaseRef.child("Users").child((user?.uid)!)
-                    .setValue(["email": self.email.text!, "name": self.name.text!, "league": ""])
-            }
+                    .setValue(["email": self.email.text!, "name": self.name.text!, "myLeague": ""])
+                self.performSegue(withIdentifier: "signUp", sender: nil)
+                UserDefaults.standard.set(self.name.text, forKey: "name")
+                UserDefaults.standard.set(self.email.text, forKey: "email")
 
-            //They are logged in
-            
-        
-            self.performSegue(withIdentifier: "signUp", sender: nil)
+            }
+            else{
+                
+            }
         }
         
     }
