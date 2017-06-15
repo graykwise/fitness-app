@@ -7,11 +7,43 @@
 //
 
 import UIKit
+import Alamofire
 
-class JoinViewController: UIViewController {
+class JoinViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var leaguesTable: UITableView!
+    
+    var leagues = Array<League>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        leaguesTable.delegate = self
+        leaguesTable.dataSource = self
+        
+        Alamofire.request("https://fitness-app-45481.firebaseio.com/Leagues.json").responseJSON { response in
+            if let JSON = response.result.value {
+                
+                let response = JSON as! NSDictionary
+                
+                //key is Leagues
+                //value is one league
+                //the one league needs to point to
+                for (key, value) in response {
+                    
+                    
+                    let league = League()
+                    
+                    if let leagueDictionary = value as? [String: AnyObject] {
+                        league.myName = leagueDictionary["Name"] as! String
+                        self.leagues.append(league)
+                    }
+                }
+                self.leaguesTable.reloadData()
+                
+            }
+            
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -19,6 +51,24 @@ class JoinViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return leagues.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->   UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = leagues[indexPath.item].myName
+        return cell
     }
     
 

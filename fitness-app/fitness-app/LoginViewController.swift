@@ -19,12 +19,12 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-                // User is signed in.
-            performSegue(withIdentifier: "showLeague", sender: nil)
-        } else {
-                // No user is signed in.
-        }
+//        if Auth.auth().currentUser != nil {
+//                // User is signed in.
+//            performSegue(withIdentifier: "pickLeague", sender: nil)
+//        } else {
+//                // No user is signed in.
+//        }
     
     }
     

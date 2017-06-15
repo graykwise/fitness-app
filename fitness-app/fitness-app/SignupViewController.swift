@@ -33,12 +33,10 @@ class SignupViewController: UIViewController {
     @IBAction func signUp(_ sender: UIButton) {
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil {
-                
+                self.databaseRef.child("Users").child((user?.uid)!)
+                    .setValue(["email": self.email.text!, "name": self.name.text!, "league": ""])
             }
-            
-            UserDefaults.standard.set(self.name.text, forKey: "name")
-            UserDefaults.standard.set(user?.uid, forKey: "myID")
-            UserDefaults.standard.set(user?.email, forKey: "email")
+
             //They are logged in
             
         

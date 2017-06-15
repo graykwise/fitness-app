@@ -8,18 +8,26 @@
 
 import UIKit
 import Alamofire
+import Firebase
 
 class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableViewDataSource {
 
     @IBOutlet weak var addMemberTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    @IBAction func createLeague(_ sender: Any) {
+        
+    }
+    
     var leagueName: String!
     var members = Array<Member>()
+    var databaseRef: DatabaseReference!
     
     @IBOutlet weak var leagueLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        databaseRef = Database.database().reference(fromURL: "https://fitness-app-45481.firebaseio.com/")
+        
         addMemberTable.delegate = self
         addMemberTable.dataSource = self
         
@@ -36,7 +44,9 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
 
                     if let memberDictionary = value as? [String: AnyObject] {
                         member.myName = memberDictionary["name"] as! String
+                        if key as! String != Auth.auth().currentUser?.uid {
                         self.members.append(member)
+                        }
                     }
                 }
                 self.addMemberTable.reloadData()
