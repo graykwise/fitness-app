@@ -40,13 +40,13 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
                 //value is one league
                 //the one league needs to point to
                 for (key, value) in response {
-                    var member = Member()
+                    let member = Member()
 
                     if let memberDictionary = value as? [String: AnyObject] {
                         member.myName = memberDictionary["name"] as! String
                         member.myUserID = key as! String
                         member.myEmail = memberDictionary["email"] as! String
-                        if key as! String != Auth.auth().currentUser?.uid {
+                        if key as? String != Auth.auth().currentUser?.uid {
                         self.members.append(member)
                         }
                     }
@@ -140,12 +140,12 @@ class AddMembersViewController: UIViewController,UITableViewDelegate,  UITableVi
 
                     }
                     
-                    
                 }
                 
                 //self.dismiss(animated: true, completion: nil)
-                let leagueView = LeagueViewController()
-                self.present(leagueView, animated: true, completion: nil)
+                var leagueView = (UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "League") as! LeagueViewController)
+
+                self.show(leagueView, sender: nil)
                 
             case .failure: break
                 // Failure... handle error

@@ -30,7 +30,7 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
                 //key is Leagues
                 //value is one league
                 //the one league needs to point to
-                for (key, value) in response {
+                for (_, value) in response {
                     
                     
                     let league = League()
@@ -80,7 +80,9 @@ class JoinViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func joinLeague(_ sender: UIButton) {
+        //update league and user info
         
+        //HOW?!?
     }
     
 

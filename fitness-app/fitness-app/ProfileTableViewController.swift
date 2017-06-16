@@ -36,14 +36,15 @@ class ProfileTableViewController: UITableViewController {
                 
                 let response = JSON as! NSDictionary
             
-                for (key, value) in response {
+                for (_, value) in response {
                     if let membersDict = value as? [String: AnyObject] {
                     
                         if myID == membersDict["userID"] as? String {
                             self.emailLabel.text = membersDict["email"] as? String
                             self.nameLabel.text = membersDict["name"] as? String
                             self.leagueLabel.text = membersDict["myLeague"] as? String
-
+                            var miles = membersDict["myRuns"] as? String
+                            self.milesLabel.text = "\(miles) miles"
                         }
                     }
                 }

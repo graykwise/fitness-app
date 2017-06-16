@@ -3,11 +3,17 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-	.st1{font-family:'BebasNeue';}
-	.st2{font-size:70.3431px;}
+	.st0{fill:#5B998D;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+	.st1{font-family:'GoboldHollowBold';}
+	.st2{font-size:58.0224px;}
 </style>
-<path class="st0" d="M151.7,145.1H48.9c-23.8,0-43.3-19.5-43.3-43.3v0c0-23.8,19.5-43.3,43.3-43.3h102.8c23.8,0,43.3,19.5,43.3,43.3
-	v0C195,125.6,175.5,145.1,151.7,145.1z"/>
-<text transform="matrix(1 0 0 1 54.2657 126.0966)" class="st1 st2">JOIN</text>
+<circle class="st0" cx="100" cy="100" r="96"/>
+<g>
+	<g id="vpsZ8a.tif_2_">
+		
+			<image style="overflow:visible;" width="3186" height="849" id="Layer_0_3_" xlink:href="57F9036D62078E81.png"  transform="matrix(4.973862e-02 8.558160e-05 -1.076251e-04 6.256237e-02 20.8517 122.868)">
+		</image>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 20.6867 113.8029)" class="st1 st2">SQUAD</text>
 </svg>

@@ -15,12 +15,14 @@ class Member: Decodable, Glossy, Encodable {
     var myUserID: String!
     var myEmail: String!
     var myLeague: String!
+    var miles: Double!
     
     init() {
         myName = ""
         myUserID = ""
         myEmail = ""
         myLeague = ""
+        miles = 0.0
     }
     
     func setName(name: String) {
@@ -36,6 +38,7 @@ class Member: Decodable, Glossy, Encodable {
         self.myEmail = "email" <~~ json
         self.myUserID = "userID" <~~ json
         self.myLeague = "myLeague" <~~ json
+        self.miles = "miles" <~~ json
     }
     
     func toJSON() -> JSON? {
@@ -43,7 +46,8 @@ class Member: Decodable, Glossy, Encodable {
             "name" ~~> self.myName,
             "email" ~~> self.myEmail,
             "userID" ~~> self.myUserID,
-            "myLeague" ~~> self.myLeague
+            "myLeague" ~~> self.myLeague,
+            "miles" ~~> self.miles
             ])
     }
 }

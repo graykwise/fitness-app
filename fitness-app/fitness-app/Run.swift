@@ -7,19 +7,22 @@
 //
 
 import Foundation
+import Gloss
+import Alamofire
+import Firebase
 
-class Run {
+class Run: Glossy, Decodable, Encodable {
+    
+    
     
     var time: Double
     var distance: Double
     var pace: Double
-    var distInMiles: Double
     
     init() {
         time = 0
         distance = 0
         pace = 0
-        distInMiles = 0
     }
     
     func saveRun(time: Double, distance: Double) {
@@ -28,13 +31,22 @@ class Run {
         
         let miles = distance * 0.0006213712
         let roundedMiles = Double( round(100 * miles) / 100)
-        distInMiles = roundedMiles
-
+        
         pace = time / roundedMiles
     }
     
-    func getDistInMiles() -> Double{
-        return distInMiles
+    required init?(json: JSON) {
+        self.time = ("time" <~~ json)!
+        self.distance = ("distance" <~~ json)!
+        self.pace = ("pace" <~~ json)!
+    }
+    
+    func toJSON() -> JSON? {
+        return jsonify([
+            "time" ~~> self.time,
+            "distance" ~~> self.distance,
+            "pace" ~~> self.pace
+            ])
     }
 
 }

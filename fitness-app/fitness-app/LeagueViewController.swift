@@ -14,35 +14,68 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
     
     @IBOutlet weak var leagueName: UINavigationItem!
     
+
+    @IBOutlet weak var memberTable: UITableView!
+    
+    
     var databaseRef: DatabaseReference!
     var cellStyle = "member"
     var myLeague = League()
 
     @IBOutlet weak var challenge: UILabel!
-    @IBOutlet weak var memberTable: UITableView!
+
     @IBOutlet weak var wager: UILabel!
 
     var memberNames = Array<String>()
+    var nameAndMileDictionary = [String: Double]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        memberNames.removeAll()
+        memberTable.reloadData()
+        viewDidLoad()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        challenge.isHidden = true
-        wager.isHidden = true
+//        challenge.isHidden = true
+//        wager.isHidden = true
         databaseRef = Database.database().reference(fromURL: "https://fitness-app-45481.firebaseio.com/")
 
         memberTable.delegate = self
         memberTable.dataSource = self
         //Load this specific League from the database of Leagues
+        let myID = Auth.auth().currentUser?.uid
+        var myLeague: String!
+        
+        Alamofire.request("https://fitness-app-45481.firebaseio.com/Users.json").responseJSON {
+            response in
+            
+            if let JSON = response.result.value {
+                
+                let response = JSON as! NSDictionary
+                
+                for (_, value) in response {
+                    if let membersDict = value as? [String: AnyObject] {
+                        
+                        if myID == membersDict["userID"] as? String {
+                            myLeague = membersDict["myLeague"] as? String
+                        }
+                    }
+                }
+            }
+        }
+        
         Alamofire.request("https://fitness-app-45481.firebaseio.com/Leagues.json").responseJSON { response in
             if let JSON = response.result.value {
                 
                 let response = JSON as! NSDictionary
 
-                for (key, value) in response {
+                for (_, value) in response {
                     
                     if let leagueDictionary = value as? [String : AnyObject] {
                         
-                        if leagueDictionary["name"] as? String == UserDefaults.standard.string(forKey: "leagueNameDefault") {
+                        if leagueDictionary["name"] as? String == myLeague {
+                            
                         self.myLeague.myName = leagueDictionary["name"] as! String
                             
                         //make bet dictionary
@@ -86,13 +119,14 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                 
                 let response = JSON as! NSDictionary
                 
-                for (key, value) in response {
+                for (_, value) in response {
                     
                     if let userDictionary = value as? [String : AnyObject] {
                         let member = Member()
                         member.myName = userDictionary["name"] as! String
                         member.myUserID = userDictionary["userID"] as! String
-                        
+                        member.miles = userDictionary["miles"] as! Double
+                        self.nameAndMileDictionary.updateValue(member.miles, forKey: member.myName)
                         for oneUser in self.myLeague.myMembers {
                             
                             if member.myUserID == oneUser {
@@ -100,7 +134,7 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
                                 if Auth.auth().currentUser?.uid == member.myUserID {
                                     self.cellStyle = "currentUser"
                                 }
-                                self.memberTable.reloadData()
+                                //self.memberTable.reloadData()
                                 self.cellStyle = "member"
                             }
                         }
@@ -118,20 +152,27 @@ class LeagueViewController: UIViewController, UITableViewDelegate,  UITableViewD
         
     }
 
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->   UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: cellStyle)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "member", for: indexPath)
         cell.textLabel?.text = memberNames[indexPath.item]
+        if let milesRun = nameAndMileDictionary.valueForKeyPath(keyPath: memberNames[indexPath.item]) as? Double{
+        
+        cell.detailTextLabel?.text = "\(milesRun) miles"
+        }
         return cell
         }
     
     @IBAction func logout(_ sender: Any) {
         do{
             try Auth.auth().signOut()
-            dismiss(animated: true, completion: nil)
+            
+            var loginScreen = (UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "Login") as! LoginViewController)
+            
+            self.present(loginScreen, animated: true, completion: nil)
         }
         catch {
             

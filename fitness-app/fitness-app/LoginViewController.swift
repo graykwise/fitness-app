@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
                     //key is Leagues
                     //value is one league
                     //the one league needs to point to
-                    for (key, value) in response {
+                    for (_, value) in response {
                         
                         if let memberDictionary = value as? [String: AnyObject] {
                             if memberDictionary["userID"] as? String == Auth.auth().currentUser?.uid {
